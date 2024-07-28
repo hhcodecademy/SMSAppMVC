@@ -1,0 +1,47 @@
+﻿@model SMSApp.DAL.Models.Student
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<hr />
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.HiddenFor(x=>x.CreateDate);
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="EnrollmentDate" class="control-label"></label>
+                <input asp-for="EnrollmentDate" class="form-control" />
+                <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-between mt-3">
+        <div class="col-md-6">
+            <a class="btn btn-primary" asp-action="Index">Back to List</a>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+            <div class="form-group">
+
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+    </div>
+</form>
